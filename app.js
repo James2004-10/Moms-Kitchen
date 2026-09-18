@@ -194,7 +194,15 @@ function renderDishCard(item) {
       </div>
 
       <div class="dish-action">
-        <div class="dish-thumb">${item.imageEmoji || '🍲'}</div>
+        <div class="dish-thumb">
+          <img 
+            src="${item.imageUrl || 'assets/logo.png'}" 
+            alt="${item.name}" 
+            class="dish-thumb-img" 
+            loading="lazy" 
+            onerror="this.onerror=null;this.src='assets/logo.png';" 
+          />
+        </div>
         ${actionBtnHtml}
       </div>
     </article>
